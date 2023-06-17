@@ -1,0 +1,17 @@
+class Solution:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        m=d=ListNode(0)
+        nums1=''
+        nums2=''
+        while l1:
+            nums1+=str(l1.val)
+            l1=l1.next
+        while l2:
+            nums2+=str(l2.val)
+            l2=l2.next
+        res=str(int(nums1[::-1])+int(nums2[::-1]))[::-1]
+
+        for i in res:
+            d.next=ListNode(i)
+            d=d.next
+        return m.next
